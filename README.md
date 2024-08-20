@@ -73,3 +73,4 @@ write it in a seprate folder by passing this script src in body
 ```
 
 You can get the Code here [Getting started](./getting_started/)
+You can See the Output [here](https://varunthapa777.github.io/React_W3/getting_started/index.html)
