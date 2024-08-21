@@ -72,5 +72,26 @@ write it in a seprate folder by passing this script src in body
 <script type="text/babel" src="script.js"></script>
 ```
 
-You can get the Code here [Getting started](./getting_started/)
+You can get the Code here [Getting started](./getting_started/)  
 You can See the Output [here](https://varunthapa777.github.io/React_W3/getting_started/index.html)
+
+- ### Create React App using Vite 
+
+You can create react app using [vite](https://vitejs.dev/) build tool.
+
+To create react app using vite you have [node](https://nodejs.org/en) install in your system.
+
+*Run the below Command in terminal in the directory where you want to install react app*
+```bash
+npx create-vite@latest 
+```
+
+*Run react app using below command after **npm install** command*
+```bash
+npm run dev
+```
+
+*You can build the react app using below command*
+```bash
+npm run build
+```
