@@ -251,3 +251,34 @@ export default MyButton;
 ```
 
 check code in this [folder](./first-react-app/)
+
+
+## Props 
+
+props stands for properties.
+
+Props are arguments passed into React components.
+
+*MyButton.jsx*
+```javascript
+const MyButton = (props) => {
+    return ( <button style={{background: props.color, fontSize: '20px', borderRadius: 4}} >Click Me</button> );
+}
+
+export default MyButton;
+```
+
+*App.jsx*
+```html
+<MyButton color="red" />
+<MyButton color="green" />
+<MyButton color="blue" />
+```
+
+## Events
+
+*onClick Event*
+
+[MyButton.jsx](first-react-app\src\components\MyButton.jsx)
+
+[App.jsx](first-react-app\src\App.jsx)
