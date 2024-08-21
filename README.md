@@ -10,6 +10,8 @@ Each commit represents a new concept or feature I've learned, and this README fi
 3. [ES6 Features](#ES6-features)
 4. [JSX](#jsx)
 5. [Functional Components](#functional-components)
+6. [Props](#props)
+7. [Events](#events)
 
 ## Introduction
 
@@ -279,6 +281,6 @@ export default MyButton;
 
 *onClick Event*
 
-[MyButton.jsx](first-react-app\src\components\MyButton.jsx)
+[MyButton.jsx](./first-react-app\src\components\MyButton.jsx)
 
-[App.jsx](first-react-app\src\App.jsx)
+[App.jsx](./first-react-app\src\App.jsx)
