@@ -7,6 +7,9 @@ Each commit represents a new concept or feature I've learned, and this README fi
 
 1. [Introduction](#introduction)
 2. [Getting Started](#getting-started)
+3. [ES6 Features](#ES6-features)
+4. [JSX](#jsx)
+5. [Functional Components](#functional-components)
 
 ## Introduction
 
@@ -95,3 +98,156 @@ npm run dev
 ```bash
 npm run build
 ```
+
+## ES6 Features
+
+React uses [ES6](https://www.geeksforgeeks.org/introduction-to-es6/), and you should be familiar with some of the new features like:  
+- [Classes](#classes)
+- [Arrow Function](#arrow-function)
+- [Variables (let, const, var)](#variables)
+- [Array Methods like .map()](#array-methods)
+- [Destructuring](#destructuring)
+- [Ternary Operator](#ternary-operator)
+- [Spread Operator](#spread-operator)
+
+### Classes
+```javascript
+//define class 
+class Person {
+
+    //define constructor
+    constructor(name) {
+        this.name = name;
+    }
+
+    //define method
+    sayName() {
+        console.log(this.name);
+    }
+}
+
+//create object of class
+let person = new Person('varun');
+
+//access method of class
+person.sayName(); 
+
+//access property of class
+console.log("Name: ",person.name); 
+
+
+//inheritance
+
+//define class that extends another class
+class Employee extends Person {
+    constructor(name, department) {
+
+        //call parent class constructor
+        super(name);
+
+        this.department = department;
+    }
+
+    getDepartment() {
+        console.log(this.department);
+    }
+}
+
+let employee = new Employee('varun', 'IT');
+
+employee.sayName();
+employee.getDepartment();
+
+console.log("Employee Name: ", employee.name);
+console.log("Employee Department: ", employee.department);
+```
+
+
+### Arrow Function
+
+Syntax of arrow function
+```javascript
+greet = () =>{console.log("hello world");} 
+```
+
+
+### Variables
+
+- **var** : mutable and have function scope
+- **let** : mutable and have block scope
+- **const** : immutable and have block scope
+
+
+### Array Methods
+
+- **Map function Example**
+```javascript
+let nums = [1,2,3,4,5];
+
+//map function return a new modified array
+let squares = nums.map(n => n * n);
+
+console.log(squares); //Output: [1, 4, 9, 16, 25]
+```
+
+
+### Destructuring
+
+```javascript
+let student_marks = [40, 50, 60, 70];
+
+//destructuring
+
+let [maths, science, english, history] = student_marks;
+
+console.log("Maths: ", maths);
+console.log("Science: ", science);
+console.log("English: ", english);
+console.log("History: ", history);
+```
+
+### Ternary Operator
+```javascript
+const age = 18;
+let isValid = age >= 18 ? 'You are eligible to vote' : 'You are not eligible to vote';
+
+console.log(isValid); //Output: You are eligible to vote
+```
+
+### Spread Operator
+
+```javascript
+let arr1 = [1,2,4];
+let arr2 = [5,6,7];
+
+let arr3 = [...arr1, ...arr2];
+console.log(arr3); //Output: [1, 2, 4, 5, 6, 7]
+```
+
+## JSX - Javascript XML
+
+JSX stands for JavaScript XML.
+
+JSX allows us to write HTML in React.
+
+JSX makes it easier to write and add HTML in React.
+
+*Example:*
+```javascript
+function hello(){
+  return <h1> Hello </h1>
+}
+```
+
+## Functional Components
+
+*MyButton.jsx*
+```javascript
+const MyButton = () => {
+    return ( <button style={{background: 'skyblue', fontSize: '20px', borderRadius: 4}} >Click Me</button> );
+}
+
+export default MyButton;
+```
+
+check code in this [folder](./first-react-app/)
