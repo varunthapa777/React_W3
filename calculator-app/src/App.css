@@ -1,0 +1,21 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.frame{
+    background: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 1em;
+    border-radius: 10px;
+}
+.keys{
+   
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    text-align: center;
+}

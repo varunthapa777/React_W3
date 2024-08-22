@@ -1,0 +1,16 @@
+.inputContainer {
+    position: relative;
+    width: 300px;
+  }
+
+.copyIcon{
+    position: absolute;
+    top: 50%;
+    right: 5px; /* Adjust distance from the right edge */
+    top: 5px; /* Position the icon at the top */
+    background: transparent;
+    border: none;
+    cursor: pointer; /* Optional: change cursor to pointer on hover */
+    font-size: 20px; /* Adjust size as needed */
+    color: #333; /* Adjust color as needed */
+}
