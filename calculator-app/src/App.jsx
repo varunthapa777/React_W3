@@ -1,46 +1,48 @@
 import "./App.css";
 import Button from "./components/Button";
-import {useState} from 'react'
+import { useState } from "react";
 import InputScreenWithCopyIcon from "./components/InputScreenWithCopyIcon";
+import math from "mathjs";
 
 function App() {
-
-  const [inputValue, changeInputValue] = useState("")
-  const [isEvaluated, changeIsEvaluated] = useState(false)
+  const [inputValue, changeInputValue] = useState("");
+  const [isEvaluated, changeIsEvaluated] = useState(false);
 
   const handleOnClick = (event) => {
     const buttonText = event.target.innerText;
-  
-    if (buttonText === '=') {
+
+    if (buttonText === "=") {
       // Calculate the result
       try {
-        const result = eval(inputValue); // Use eval with caution; it's better to use a math library
+        const expression = inputValue.replace("x", "*");
+
+        const result = math.evaluate(expression);
         changeInputValue(result.toString());
-        changeIsEvaluated(true)
+        changeIsEvaluated(true);
       } catch (error) {
-        changeInputValue('Error');
+        changeInputValue("Error");
         console.log(error);
-        
       }
-    } else if (buttonText === 'AC') {
+    } else if (buttonText === "AC") {
       // Clear all input (reset the calculator)
-      changeInputValue('');
-    } else if (buttonText === 'C') {
+      changeInputValue("");
+    } else if (buttonText === "C") {
       // Clear the last character
       const newInputValue = inputValue.slice(0, -1);
       changeInputValue(newInputValue);
     } else {
       // Handle regular button input
-      if(isEvaluated){changeIsEvaluated(false)}
+      if (isEvaluated) {
+        changeIsEvaluated(false);
+      }
       const newInputValue = inputValue + buttonText;
       changeInputValue(newInputValue);
     }
   };
-  
-  const handleCopyButton = ()=>{
-    navigator.clipboard.writeText(inputValue)
 
-  }
+  const handleCopyButton = () => {
+    navigator.clipboard.writeText(inputValue);
+  };
   // list buttons required in caluclator
   const buttons = [
     "1",
@@ -56,7 +58,7 @@ function App() {
     "-",
     "C",
     "+",
-    "*",
+    "x",
     "AC",
     ".",
     "/",
@@ -68,14 +70,16 @@ function App() {
       <div className="container">
         <div className="frame">
           {/* <InputScreen value={inputValue} /> */}
-          <InputScreenWithCopyIcon value={inputValue} onClick={handleCopyButton} iconVisible={isEvaluated} />
-   
+          <InputScreenWithCopyIcon
+            value={inputValue}
+            onClick={handleCopyButton}
+            iconVisible={isEvaluated}
+          />
+
           <div className="keys">
-          {
-            buttons.map((button)=>(
-              <Button key={button} value={button} onClick={handleOnClick}/>
-            ))
-          }
+            {buttons.map((button) => (
+              <Button key={button} value={button} onClick={handleOnClick} />
+            ))}
           </div>
         </div>
       </div>

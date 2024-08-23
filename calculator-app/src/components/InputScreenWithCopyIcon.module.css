@@ -5,7 +5,6 @@
 
 .copyIcon{
     position: absolute;
-    top: 50%;
     right: 5px; /* Adjust distance from the right edge */
     top: 5px; /* Position the icon at the top */
     background: transparent;
@@ -13,4 +12,9 @@
     cursor: pointer; /* Optional: change cursor to pointer on hover */
     font-size: 20px; /* Adjust size as needed */
     color: #333; /* Adjust color as needed */
+    transition: transform 0.3s ease; /* Optional: add smooth transition */
+  }
+
+.copyIcon:active{
+    background: rgb(198, 194, 194);
 }
