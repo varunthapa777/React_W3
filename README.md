@@ -80,30 +80,34 @@ write it in a seprate folder by passing this script src in body
 You can get the Code here [Getting started](./getting_started/)  
 You can See the Output [here](https://varunthapa777.github.io/React_W3/getting_started/index.html)
 
-- ### Create React App using Vite 
+- ### Create React App using Vite
 
 You can create react app using [vite](https://vitejs.dev/) build tool.
 
 To create react app using vite you have [node](https://nodejs.org/en) install in your system.
 
-*Run the below Command in terminal in the directory where you want to install react app*
+_Run the below Command in terminal in the directory where you want to install react app_
+
 ```bash
-npx create-vite@latest 
+npx create-vite@latest
 ```
 
-*Run react app using below command after **npm install** command*
+_Run react app using below command after **npm install** command_
+
 ```bash
 npm run dev
 ```
 
-*You can build the react app using below command*
+_You can build the react app using below command_
+
 ```bash
 npm run build
 ```
 
 ## ES6 Features
 
-React uses [ES6](https://www.geeksforgeeks.org/introduction-to-es6/), and you should be familiar with some of the new features like:  
+React uses [ES6](https://www.geeksforgeeks.org/introduction-to-es6/), and you should be familiar with some of the new features like:
+
 - [Classes](#classes)
 - [Arrow Function](#arrow-function)
 - [Variables (let, const, var)](#variables)
@@ -113,49 +117,47 @@ React uses [ES6](https://www.geeksforgeeks.org/introduction-to-es6/), and you sh
 - [Spread Operator](#spread-operator)
 
 ### Classes
+
 ```javascript
-//define class 
+//define class
 class Person {
+  //define constructor
+  constructor(name) {
+    this.name = name;
+  }
 
-    //define constructor
-    constructor(name) {
-        this.name = name;
-    }
-
-    //define method
-    sayName() {
-        console.log(this.name);
-    }
+  //define method
+  sayName() {
+    console.log(this.name);
+  }
 }
 
 //create object of class
-let person = new Person('varun');
+let person = new Person("varun");
 
 //access method of class
-person.sayName(); 
+person.sayName();
 
 //access property of class
-console.log("Name: ",person.name); 
-
+console.log("Name: ", person.name);
 
 //inheritance
 
 //define class that extends another class
 class Employee extends Person {
-    constructor(name, department) {
+  constructor(name, department) {
+    //call parent class constructor
+    super(name);
 
-        //call parent class constructor
-        super(name);
+    this.department = department;
+  }
 
-        this.department = department;
-    }
-
-    getDepartment() {
-        console.log(this.department);
-    }
+  getDepartment() {
+    console.log(this.department);
+  }
 }
 
-let employee = new Employee('varun', 'IT');
+let employee = new Employee("varun", "IT");
 
 employee.sayName();
 employee.getDepartment();
@@ -164,14 +166,15 @@ console.log("Employee Name: ", employee.name);
 console.log("Employee Department: ", employee.department);
 ```
 
-
 ### Arrow Function
 
 Syntax of arrow function
-```javascript
-greet = () =>{console.log("hello world");} 
-```
 
+```javascript
+greet = () => {
+  console.log("hello world");
+};
+```
 
 ### Variables
 
@@ -179,19 +182,18 @@ greet = () =>{console.log("hello world");}
 - **let** : mutable and have block scope
 - **const** : immutable and have block scope
 
-
 ### Array Methods
 
 - **Map function Example**
+
 ```javascript
-let nums = [1,2,3,4,5];
+let nums = [1, 2, 3, 4, 5];
 
 //map function return a new modified array
-let squares = nums.map(n => n * n);
+let squares = nums.map((n) => n * n);
 
 console.log(squares); //Output: [1, 4, 9, 16, 25]
 ```
-
 
 ### Destructuring
 
@@ -209,9 +211,11 @@ console.log("History: ", history);
 ```
 
 ### Ternary Operator
+
 ```javascript
 const age = 18;
-let isValid = age >= 18 ? 'You are eligible to vote' : 'You are not eligible to vote';
+let isValid =
+  age >= 18 ? "You are eligible to vote" : "You are not eligible to vote";
 
 console.log(isValid); //Output: You are eligible to vote
 ```
@@ -219,8 +223,8 @@ console.log(isValid); //Output: You are eligible to vote
 ### Spread Operator
 
 ```javascript
-let arr1 = [1,2,4];
-let arr2 = [5,6,7];
+let arr1 = [1, 2, 4];
+let arr2 = [5, 6, 7];
 
 let arr3 = [...arr1, ...arr2];
 console.log(arr3); //Output: [1, 2, 4, 5, 6, 7]
@@ -234,43 +238,58 @@ JSX allows us to write HTML in React.
 
 JSX makes it easier to write and add HTML in React.
 
-*Example:*
+_Example:_
+
 ```javascript
-function hello(){
-  return <h1> Hello </h1>
+function hello() {
+  return <h1> Hello </h1>;
 }
 ```
 
 ## Functional Components
 
-*MyButton.jsx*
+_MyButton.jsx_
+
 ```javascript
 const MyButton = () => {
-    return ( <button style={{background: 'skyblue', fontSize: '20px', borderRadius: 4}} >Click Me</button> );
-}
+  return (
+    <button
+      style={{ background: "skyblue", fontSize: "20px", borderRadius: 4 }}
+    >
+      Click Me
+    </button>
+  );
+};
 
 export default MyButton;
 ```
 
 check code in this [folder](./first-react-app/)
 
-
-## Props 
+## Props
 
 props stands for properties.
 
 Props are arguments passed into React components.
 
-*MyButton.jsx*
+_MyButton.jsx_
+
 ```javascript
 const MyButton = (props) => {
-    return ( <button style={{background: props.color, fontSize: '20px', borderRadius: 4}} >Click Me</button> );
-}
+  return (
+    <button
+      style={{ background: props.color, fontSize: "20px", borderRadius: 4 }}
+    >
+      Click Me
+    </button>
+  );
+};
 
 export default MyButton;
 ```
 
-*App.jsx*
+_App.jsx_
+
 ```html
 <MyButton color="red" />
 <MyButton color="green" />
@@ -279,7 +298,7 @@ export default MyButton;
 
 ## Events
 
-*onClick Event*
+_onClick Event_
 
 [MyButton.jsx](./first-react-app/src/components/MyButton.jsx)
 
@@ -287,5 +306,6 @@ export default MyButton;
 
 ## Calculator App using React
 
-Check the code [Here](./calculator-app/)
+<img src="./project_png/calculator_app.png" alt="calculator app" style="width:300px;height:500px;">
 
+Check the code [Here](./calculator-app/)

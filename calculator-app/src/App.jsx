@@ -2,7 +2,7 @@ import "./App.css";
 import Button from "./components/Button";
 import { useState } from "react";
 import InputScreenWithCopyIcon from "./components/InputScreenWithCopyIcon";
-import math from "mathjs";
+import { evaluate } from "mathjs";
 
 function App() {
   const [inputValue, changeInputValue] = useState("");
@@ -16,7 +16,7 @@ function App() {
       try {
         const expression = inputValue.replace("x", "*");
 
-        const result = math.evaluate(expression);
+        const result =  evaluate(expression);
         changeInputValue(result.toString());
         changeIsEvaluated(true);
       } catch (error) {
