@@ -306,6 +306,6 @@ _onClick Event_
 
 ## Calculator App using React
 
-<img src="./project_png/calculator_app.png" alt="calculator app" style="width:300px;height:500px;">
+<img src="./project_png/calculator_app.png" alt="calculator app" style="width:300px;height:550px;">
 
 Check the code [Here](./calculator-app/)
